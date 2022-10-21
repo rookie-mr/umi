@@ -1,67 +1,77 @@
-import address from '@umijs/deps/compiled/address';
-import * as parser from '@umijs/deps/compiled/babel/parser';
-import * as traverse from '@umijs/deps/compiled/babel/traverse';
-import * as t from '@umijs/deps/compiled/babel/types';
-import chalk from '@umijs/deps/compiled/chalk';
-import spawn from '@umijs/deps/compiled/cross-spawn';
-import createDebug, { Debugger } from '@umijs/deps/compiled/debug';
-import deepmerge from '@umijs/deps/compiled/deepmerge';
-import execa from '@umijs/deps/compiled/execa';
-import glob from '@umijs/deps/compiled/glob';
-import got from '@umijs/deps/compiled/got';
-import lodash from '@umijs/deps/compiled/lodash';
-import mkdirp from '@umijs/deps/compiled/mkdirp';
-import Mustache from '@umijs/deps/compiled/mustache';
-import pkgUp from '@umijs/deps/compiled/pkg-up';
-import portfinder from '@umijs/deps/compiled/portfinder';
-import prompts from '@umijs/deps/compiled/prompts';
-import resolve from '@umijs/deps/compiled/resolve';
-import rimraf from '@umijs/deps/compiled/rimraf';
-import semver from '@umijs/deps/compiled/semver';
-import signale from '@umijs/deps/compiled/signale';
-import yargs from '@umijs/deps/compiled/yargs';
-import yParser from '@umijs/deps/compiled/yargs-parser';
-import * as chokidar from '@umijs/deps/reexported/chokidar';
-import clipboardy from '@umijs/deps/reexported/clipboardy';
-
-export { default as BabelRegister } from './BabelRegister/BabelRegister';
-export { default as cheerio } from './cheerio/cheerio';
-export { default as cleanRequireCache } from './cleanRequireCache/cleanRequireCache';
-export { default as compatESModuleRequire } from './compatESModuleRequire/compatESModuleRequire';
-export { default as delay } from './delay/delay';
-export { default as Generator } from './Generator/Generator';
-export { default as getFile } from './getFile/getFile';
-export { default as isLernaPackage } from './isLernaPackage/isLernaPackage';
-export { default as mergeConfig } from './mergeConfig/mergeConfig';
-export { default as parseRequireDeps } from './parseRequireDeps/parseRequireDeps';
-export { default as randomColor } from './randomColor/randomColor';
-export * from './routes';
-export * from './ssr';
-export * from './types';
-export { default as winEOL, isWindows } from './winEOL/winEOL';
-export { default as winPath } from './winPath/winPath';
-export { spawn };
-export { semver };
-export { address };
-export { chalk };
-export { clipboardy };
-export { chokidar };
-export { createDebug, Debugger };
-export { deepmerge };
-export { execa };
-export { lodash };
-export { glob };
-export { got };
-export { prompts };
-export { portfinder };
-export { pkgUp };
-export { resolve };
-export { yargs };
-export { mkdirp };
-export { Mustache };
-export { rimraf };
-export { yParser };
-export { t };
-export { parser };
-export { traverse };
-export { signale };
+import * as chokidar from 'chokidar';
+import address from '../compiled/address';
+import axios from '../compiled/axios';
+import chalk from '../compiled/chalk';
+import cheerio from '../compiled/cheerio';
+import crossSpawn from '../compiled/cross-spawn';
+import debug from '../compiled/debug';
+import deepmerge from '../compiled/deepmerge';
+import * as execa from '../compiled/execa';
+import fsExtra from '../compiled/fs-extra';
+import glob from '../compiled/glob';
+// import globby from '../compiled/globby';
+import lodash from '../compiled/lodash';
+import Mustache from '../compiled/mustache';
+import * as pkgUp from '../compiled/pkg-up';
+import portfinder from '../compiled/portfinder';
+import prompts from '../compiled/prompts';
+import resolve from '../compiled/resolve';
+import rimraf from '../compiled/rimraf';
+import semver from '../compiled/semver';
+import stripAnsi from '../compiled/strip-ansi';
+import yParser from '../compiled/yargs-parser';
+import BaseGenerator from './BaseGenerator/BaseGenerator';
+import generateFile from './BaseGenerator/generateFile';
+import Generator from './Generator/Generator';
+import getGitInfo from './getGitInfo';
+import installDeps from './installDeps';
+import filesize from '../compiled/filesize';
+import gzipSize from '../compiled/gzip-size';
+import * as logger from './logger';
+import * as printHelp from './printHelp';
+import updatePackageJSON from './updatePackageJSON';
+export * from './getCorejsVersion';
+export * from './getDevBanner';
+export * from './importLazy';
+export * from './isLocalDev';
+export * from './isStyleFile';
+export * from './npmClient';
+export * from './randomColor/randomColor';
+export * as register from './register';
+export * from './tryPaths';
+export * from './winPath';
+export * from './setNoDeprecation';
+export {
+  address,
+  axios,
+  chalk,
+  cheerio,
+  chokidar,
+  crossSpawn,
+  debug,
+  deepmerge,
+  execa,
+  fsExtra,
+  glob,
+  Generator,
+  BaseGenerator,
+  generateFile,
+  installDeps,
+  // globby,
+  lodash,
+  logger,
+  Mustache,
+  pkgUp,
+  portfinder,
+  prompts,
+  resolve,
+  rimraf,
+  semver,
+  stripAnsi,
+  updatePackageJSON,
+  yParser,
+  getGitInfo,
+  printHelp,
+  filesize,
+  gzipSize,
+};
